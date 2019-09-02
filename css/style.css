@@ -3,140 +3,149 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+/* error(" rgb(189, 87, 87)"); */
 body{
     background-color: rgb(87, 189, 130);
-    height: 100vh;
-    display: flex;
-    position: relative;
     transition: background 0.5s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+form{
+    margin-top: 1%;
+}
+
+#msg{
+    border-radius: 5px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 25px;
+    margin-top: 140px;
+    opacity: 0;
+    width: 100%;
 }
 
 .field-name,
 .field-email,
 .field-password,
-.field-filish{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
+.field-finish{
+    background-color: #fff;
+    margin-top: 10px;
     height: 50px;
-    width: 400px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     border-radius: 5px;
     transition: all 0.5s ease;
 }
 
-.field-filish p{
-    margin-top: 20px;
+
+.field-name input,
+.field-email input,
+.field-password input{
+    width: 90%;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+
+@media(max-width: 1280px){
+.field-name input,
+.field-email input,
+.field-password input{
+        width: 70%;
+    }
+}
+
+@media(max-width: 600px){
+.field-name input,
+.field-email input,
+.field-password input{
+        width: 70%;
+    }
+    #msg{
+        font-size: 20px;
+    }
+    #helloMsg{
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 576px){
+.field-name input,
+.field-email input,
+.field-password input{
+    width: 60%;
+    }
+    #msg{
+        font-size: 15px;
+    }
+    #helloMsg{
+        font-size: 15px;
+    }
+
 }
 
 .field-name i,
 .field-email i,
 .field-password i,
-.field-filish i{
-    padding: 10px;
-    cursor: pointer;
-}
-
-div.innactive{
-    opacity: 0;
-    pointer-events: none;
-    transform: translate(-50%, 50%);
-}
-
-div.active{
-    opacity: 1;
-    pointer-events: all;
-    transform: translate(-50%, -50%);
-}
-
-.field-name input,
-.field-email input,
-.field-password input{
-    flex: 1;
-    height: 100%;
-    outline: 0;
-    border: 0;
-}
-
-
-@keyframes shake{
-    0%{
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    50%{
-        transform: translate(-50%, -50%) rotate(10deg);
-    }
-    100%{
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-}
-
-
-/* .field-name ,
-.field-email ,
-.field-password,
-.field-filish{
- left: 30%;
- top: 320px;
- background-color: #fff;
- height: 50px;
- width: 400px;
- border-radius: 5px;
-}
-
-.field-name  i:first-child,
-.field-email  i:first-child,
-.field-password i:first-child,
-.field-filish i:first-child{
-    position: absolute;
-    left: 0;
-    line-height: 30px;
-}
-
-.field-name  i:last-child,
-.field-email  i:last-child,
-.field-password i:last-child,
-.field-filish i:last-child{
-    position: absolute;
-    right: 0;
-    line-height: 30px;
-}
-
-.field-name  i,
-.field-email  i,
-.field-password i,
-.field-filish i{
+.field-finish i{
     padding: 10px;
 }
 
-.field-name input,
-.field-email input,
-.field-password input,
-.field-filish p{
-    left: 10%;
-    height: 100%;
-    z-index: 2;
-}
-
-.field-filish{
+.field-finish{
     position: relative;
 }
 
-.field-filish i, .field-filish p{
-    float: left;
-    line-height: 40px;
+.field-finish i{
+    position: absolute;
+    line-height: 30px;
+    font-size: 25px;
+}
+
+@media(max-width: 576px){
+    .field-finish i{
+        font-size: 15px;
+    }
+}
+
+.field-finish i:first-child{
+    left: 15px;
+}
+
+.field-finish i:last-child{
+    right: 10px;
+}
+
+.field-finish span{
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.field-submit input{
+    background-color: darkcyan;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    border: 0;
+    border-radius: 3px;
+    margin-top: 10px;
+    font-size: 20px;
 }
 
 div.innactive{
-    opacity: 0;
+    visibility: hidden;
 }
 
 div.active{
-    opacity: 1;
-} */
+    visibility: visible;
+}
+
+@keyframes shake{
+    0%{
+        transform:rotate(0deg);
+    }
+    50%{
+        transform:rotate(10deg);
+    }
+    100%{
+        transform:rotate(0deg);
+    }
+}
